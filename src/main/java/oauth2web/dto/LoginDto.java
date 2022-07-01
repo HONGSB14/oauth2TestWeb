@@ -1,5 +1,6 @@
 package oauth2web.dto;
 
+import lombok.Builder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,7 +9,9 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class LoginDto implements UserDetails { //로그인 세션을 만들기 위한 UserDetails 를 구현 받고 있다.  UserDetails = Spring Security 에서 유저의 정보를 담는 인터페이스이다.
+@Builder
+public class LoginDto implements UserDetails { //로그인 세션을 만들기 위한 UserDetails 를 구현 받고 있다.
+                                                                                   // UserDetails = Spring Security 에서 유저의 정보를 담는 인터페이스이다.
     private String mid;     // 유저 아이디
     private String mpassword;   //유저 패스워드
     private Set<GrantedAuthority> authorities;  //권한
